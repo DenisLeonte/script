@@ -10,7 +10,7 @@ ifstream in(filename.c_str());
 string op;
 map<string, int> variables;
 
-void logic(string op)
+int logic(string op)
 {
     if (strcmp(op.c_str(), "var") == 0)
     {
@@ -51,7 +51,7 @@ void logic(string op)
             b1 = stoi(b);
         else
             b1 = variables[b];
-        cout << a1 + b1 << endl;
+        return a1 + b1;
     }
     if (strcmp(op.c_str(), "sub") == 0)
     {
@@ -83,8 +83,8 @@ void logic(string op)
         if (b_num)
             b1 = stoi(b);
         else
-            b1 = variables[b];
-        cout << a1 - b1 << endl;
+            b1 = variables[b]; 
+        return a1 - b1;
 
     }
     if (strcmp(op.c_str(), "mul") == 0)
@@ -118,7 +118,7 @@ void logic(string op)
             b1 = stoi(b);
         else
             b1 = variables[b];
-        cout << a1 * b1 << endl;
+        return a1 * b1;
     }
     if (strcmp(op.c_str(), "div") == 0)
     {
@@ -151,7 +151,7 @@ void logic(string op)
             b1 = stoi(b);
         else
             b1 = variables[b];
-        cout << a1 / b1 << endl;
+        return a1 / b1;
     }
     if (strcmp(op.c_str(), "mod") == 0)
     {
@@ -184,7 +184,7 @@ void logic(string op)
             b1 = stoi(b);
         else
             b1 = variables[b];
-        cout << a1 % b1 << endl;
+        return a1 % b1;
     }
     if (strcmp(op.c_str(), "print") == 0)
     {
@@ -256,42 +256,42 @@ void logic(string op)
             {
                 string au;
                 in >> au;
-                logic(au);
+                cout << logic(au) << endl;
             }
         if (strcmp(c.c_str(), ">") == 0)
             if (a1 > b1)
             {
                 string au;
                 in >> au;
-                logic(au);
+                
             }
         if (strcmp(c.c_str(), ">=") == 0)
             if (a1 >= b1)
             {
                 string au;
-                in >> au;
-                logic(au);
+                in >> au; 
+                cout << logic(au) << endl;
             }
         if (strcmp(c.c_str(), "<") == 0)
             if (a1 < b1)
             {
                 string au;
                 in >> au;
-                logic(au);
+                cout << logic(au) << endl;
             }
         if (strcmp(c.c_str(), "<=") == 0)
             if (a1 <= b1)
             {
                 string au;
                 in >> au;
-                logic(au);
+                cout << logic(au) << endl;
             }
         if (strcmp(c.c_str(), "!=") == 0)
             if (a1 != b1)
             {
                 string au;
                 in >> au;
-                logic(au);
+                cout << logic(au) << endl;
             }
     }
     if (strcmp(op.c_str(), "assign") == 0)
@@ -300,6 +300,7 @@ void logic(string op)
         in >> receiver;
         string aux;
         in >> aux;
+        variables[receiver] = logic(aux);
     }
 }
 
