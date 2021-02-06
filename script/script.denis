@@ -1,0 +1,15 @@
+**
+Hello this is a comment
+This comment is better than c++ comment because it can go multiline
+
+INSTRUCTIONS:
+var = variabila (numar)
+add/sub/div/mul/mod = adaugare/scadere/impartire/inmultire/rest
+print = afisare pe ecran
+if conditie statement(numai unu)
+**
+var a 100
+var b 50
+add a b
+print a
+if a > 75 add b 500
