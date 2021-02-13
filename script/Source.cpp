@@ -252,47 +252,101 @@ int logic(string op)
 
 
         if (strcmp(c.c_str(), "==") == 0)
-            if (a1 == b1)
-            {
-                string au;
-                in >> au;
-                cout << logic(au) << endl;
-            }
+        {
+            string au, auu;
+            in >> au;
+            if (strcmp(au.c_str(), ":") == 0)
+                while (true)
+                {
+                    in >> auu;
+                    if (strcmp(auu.c_str(), ":") == 0)
+                        break;
+                    else if (a1 == b1)
+                        logic(au);
+                }
+            else
+                logic(au);
+        }
         if (strcmp(c.c_str(), ">") == 0)
-            if (a1 > b1)
-            {
-                string au;
-                in >> au;
-                
-            }
+        {
+            string au, auu;
+            in >> au;
+            if (strcmp(au.c_str(), ":") == 0)
+                while (true)
+                {
+                    in >> auu;
+                    if (strcmp(auu.c_str(), ":") == 0)
+                        break;
+                    else if (a1 > b1)
+                        logic(au);
+                }
+            else
+                logic(au);
+        }
         if (strcmp(c.c_str(), ">=") == 0)
-            if (a1 >= b1)
-            {
-                string au;
-                in >> au; 
-                cout << logic(au) << endl;
-            }
+        {
+            string au, auu;
+            in >> au;
+            if (strcmp(au.c_str(), ":") == 0)
+                while (true)
+                {
+                    in >> auu;
+                    if (strcmp(auu.c_str(), ":") == 0)
+                        break;
+                    else if (a1 >= b1)
+                        logic(au);
+                }
+            else
+                logic(au);
+        }
         if (strcmp(c.c_str(), "<") == 0)
-            if (a1 < b1)
-            {
-                string au;
-                in >> au;
-                cout << logic(au) << endl;
-            }
+        {
+            string au, auu;
+            in >> au;
+            if (strcmp(au.c_str(), ":") == 0)
+                while (true)
+                {
+                    in >> auu;
+                    if (strcmp(auu.c_str(), ":") == 0)
+                        break;
+                    else if (a1 < b1)
+                        logic(au);
+                }
+            else
+                logic(au);
+        }
         if (strcmp(c.c_str(), "<=") == 0)
-            if (a1 <= b1)
-            {
-                string au;
-                in >> au;
-                cout << logic(au) << endl;
-            }
+        {
+            string au, auu;
+            in >> au;
+            if (strcmp(au.c_str(), ":") == 0)
+                while (true)
+                {
+                    in >> auu;
+                    if (strcmp(auu.c_str(), ":") == 0)
+                        break;
+                    else if (a1 <= b1)
+                        logic(au);
+                }
+            else
+                logic(au);
+        }
         if (strcmp(c.c_str(), "!=") == 0)
-            if (a1 != b1)
-            {
-                string au;
-                in >> au;
-                cout << logic(au) << endl;
-            }
+        {
+            string au, auu;
+            in >> au;
+            if (strcmp(au.c_str(), ":") == 0)
+                while (true)
+                {
+                    in >> auu;
+                    if (strcmp(auu.c_str(), ":") == 0)
+                        break;
+                    else if (a1 != b1)
+                        logic(au);
+                }
+            else
+                logic(au);
+        }
     }
     if (strcmp(op.c_str(), "assign") == 0)
     {
@@ -301,6 +355,12 @@ int logic(string op)
         string aux;
         in >> aux;
         variables[receiver] = logic(aux);
+    }
+    if (strcmp(op.c_str(), "printf") == 0)
+    {
+        string aux;
+        in >> aux;
+        cout << logic(aux) << endl;
     }
 }
 

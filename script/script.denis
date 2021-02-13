@@ -3,16 +3,26 @@ Hello this is a comment
 This comment is better than c++ comment because it can go multiline
 
 INSTRUCTIONS:
-var <name> creeaza o valoare
+var <name> creeaza o valoare 
 add/sub/div/mul/mod = adaugare/scadere/impartire/inmultire/rest  syntax : <operator> <var1> <var2>
 print <val> afiseaza variabile
-if <conditie> <statement>    (numai un statement si ordine)
+printf <operatie logica>
+if <conditie> <statement> (numai un statement)
 assign <valoare destinatie> <operatie logica>
-**
-var a 100
-var b 50
-print a
-if a > 75 add b 500
 
-assign s add a b
-print s
+NEW addition at v1.4
+Now you can put multiple operations under the if delimited by a pair of ':' characters
+
+EXAMPLE CODE BELOW:
+
+**
+var a 90
+if a >= 90 print 100
+
+var b 150
+if b != 150 
+:
+print 150
+print a
+print b
+:
