@@ -138,7 +138,7 @@ int div(string a, string b)
     return a1 / b1;
 }
 
-int div(string a, string b)
+int mod(string a, string b)
 {
     int a1, b1;
     bool a_num = true;
@@ -190,6 +190,11 @@ void print(string a)
     cout << a1 << endl;
 }
 
+void printf(string a)
+{
+    cout << logicWithInput(a) << endl;
+}
+
 void comm()
 {
     string aux;
@@ -203,7 +208,7 @@ void comm()
     }
 }
 
-int logic(string op)
+int logicWithInput(string op)
 {
     if (strcmp(op.c_str(), "var") == 0)
     {
@@ -297,10 +302,10 @@ int logic(string op)
                     if (strcmp(auu.c_str(), ":") == 0)
                         break;
                     else if (a1 == b1)
-                        logic(au);
+                        logicWithInput(au);
                 }
             else
-                logic(au);
+                logicWithInput(au);
         }
         if (strcmp(c.c_str(), ">") == 0)
         {
@@ -313,10 +318,10 @@ int logic(string op)
                     if (strcmp(auu.c_str(), ":") == 0)
                         break;
                     else if (a1 > b1)
-                        logic(au);
+                        logicWithInput(au);
                 }
             else
-                logic(au);
+                logicWithInput(au);
         }
         if (strcmp(c.c_str(), ">=") == 0)
         {
@@ -329,10 +334,10 @@ int logic(string op)
                     if (strcmp(auu.c_str(), ":") == 0)
                         break;
                     else if (a1 >= b1)
-                        logic(au);
+                        logicWithInput(au);
                 }
             else
-                logic(au);
+                logicWithInput(au);
         }
         if (strcmp(c.c_str(), "<") == 0)
         {
@@ -345,10 +350,10 @@ int logic(string op)
                     if (strcmp(auu.c_str(), ":") == 0)
                         break;
                     else if (a1 < b1)
-                        logic(au);
+                        logicWithInput(au);
                 }
             else
-                logic(au);
+                logicWithInput(au);
         }
         if (strcmp(c.c_str(), "<=") == 0)
         {
@@ -361,10 +366,10 @@ int logic(string op)
                     if (strcmp(auu.c_str(), ":") == 0)
                         break;
                     else if (a1 <= b1)
-                        logic(au);
+                        logicWithInput(au);
                 }
             else
-                logic(au);
+                logicWithInput(au);
         }
         if (strcmp(c.c_str(), "!=") == 0)
         {
@@ -377,10 +382,10 @@ int logic(string op)
                     if (strcmp(auu.c_str(), ":") == 0)
                         break;
                     else if (a1 != b1)
-                        logic(au);
+                        logicWithInput(au);
                 }
             else
-                logic(au);
+                logicWithInput(au);
         }
     }
     if (strcmp(op.c_str(), "assign") == 0)
@@ -389,13 +394,13 @@ int logic(string op)
         in >> receiver;
         string aux;
         in >> aux;
-        variables[receiver] = logic(aux);
+        variables[receiver] = logicWithInput(aux);
     }
     if (strcmp(op.c_str(), "printf") == 0)
     {
-        string aux;
-        in >> aux;
-        cout << logic(aux) << endl;
+        string x;
+        in >> x;
+        printf(x);
     }
 }
 
@@ -403,7 +408,7 @@ int main()
 {
     while (in >> op)
     {
-        logic(op);
+        logicWithInput(op);
     }
     in.close();
     return 0;

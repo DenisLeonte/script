@@ -10,10 +10,8 @@ printf <operatie logica>
 if <conditie> <statement> (numai un statement)
 assign <valoare destinatie> <operatie logica>
 
-VERSION 2.0
-Changed the entirety of the code, made it somewhat 
-possible to implement some loop algorithms in the
-future.
+VERSION 2.1
+Added printf function to the main code
 
 CODE BELOW:
 **
