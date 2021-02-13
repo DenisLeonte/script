@@ -10,19 +10,10 @@ printf <operatie logica>
 if <conditie> <statement> (numai un statement)
 assign <valoare destinatie> <operatie logica>
 
-NEW addition at v1.4
-Now you can put multiple operations under the if delimited by a pair of ':' characters
+VERSION 2.0
+Changed the entirety of the code, made it somewhat 
+possible to implement some loop algorithms in the
+future.
 
-EXAMPLE CODE BELOW:
-
+CODE BELOW:
 **
-var a 90
-if a >= 90 print 100
-
-var b 150
-if b != 150 
-:
-print 150
-print a
-print b
-:
